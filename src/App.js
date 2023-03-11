@@ -7,7 +7,7 @@ function App() {
     <div>
       <h1>Reddit</h1>
       <button>Click on me!</button>
-      <PostCard title={'test'} content={'i fucking hate this'} />
+      <PostCard title={'test'} content={'i might sort of get this'} />
     </div>
   );
 }
