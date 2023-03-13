@@ -1,4 +1,5 @@
 import './App.css';
+import Arrows from './components/Arrows/Arrows';
 import PostCard from './components/PostCard/PostCard';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div>
       <h1>Reddit</h1>
       <button>Click on me!</button>
+      <Arrows />
       <PostCard />
     </div>
   );

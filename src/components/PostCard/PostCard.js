@@ -7,7 +7,8 @@ const PostCard = () => {
         { id: 3, name: "Jane Doe" },
         { id: 3, name: "Jane Doe" },
         { id: 3, name: "Jane Doe" },
-        { id: 3, name: "Jane Doe" },
+        { id: 3, name: "Jane Doe" }
+
       ];
       
       const feed = posts.map((post) => 
