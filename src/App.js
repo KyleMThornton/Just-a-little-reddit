@@ -1,12 +1,12 @@
 import './App.css';
-import { Posts } from './features/Posts';
+import { Counter } from './features/Counter';
 
 
 function App() {
   return (
     <div>
       <h1>Reddit</h1>
-      <Posts />
+      <Counter />
     </div>
   );
 }
