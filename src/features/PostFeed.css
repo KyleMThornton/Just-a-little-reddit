@@ -1,0 +1,21 @@
+.postBox {
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 30rem;
+    height: 25rem;
+    margin: 1rem;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.upDownButtons {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.feed {
+}

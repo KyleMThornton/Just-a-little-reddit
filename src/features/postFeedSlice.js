@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [{ title: 'title',content: 'content' }]
 
-const counterSlice = createSlice({
-  name: 'counter',
+const postFeedSlice = createSlice({
+  name: 'postFeed',
   initialState,
   reducers: {
     increment(state) {
@@ -15,5 +15,5 @@ const counterSlice = createSlice({
   },
 })
 
-export const { increment, decrement } = counterSlice.actions
-export default counterSlice.reducer
+export const { increment, decrement } = postFeedSlice.actions
+export default postFeedSlice.reducer
