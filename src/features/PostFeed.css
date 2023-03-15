@@ -5,6 +5,7 @@
     height: 25rem;
     margin: 1rem;
     justify-content: space-between;
+    box-shadow: 5px 5px;
 }
 
 .buttons {
