@@ -27,7 +27,7 @@ export function PostFeed() {
         </div>
         <div className='feed'>
             {feed.map((post, index) => (
-                <><div key={index} className="postBox"><h2>{post.title}</h2><p>{post.content}</p></div></>
+                <><div key={index} className="postBox"><h2>{post.title}</h2><h3>{post.content}</h3><p>{post.sub}</p></div></>
             ))}
         </div>
     </div>

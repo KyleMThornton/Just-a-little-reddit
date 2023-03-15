@@ -4,6 +4,8 @@ div {
     flex-direction: column;
 }
 
-button {
-    font-size: 1rem;
+.titleWrapper {
+    width: 100vw;
+    background-color: white;
+    margin: 1rem 0rem;
 }

@@ -4,8 +4,10 @@ import { PostFeed } from './features/PostFeed';
 
 function App() {
   return (
-    <div>
-      <h1>Reddit</h1>
+    <div className='pageWrapper'>
+      <div className='titleWrapper'>
+        <h1>Reddit</h1>
+      </div>
       <PostFeed />
     </div>
   );
