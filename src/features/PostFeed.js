@@ -6,6 +6,7 @@ import './PostFeed.css'
 export function PostFeed() {
   const dispatch = useDispatch()
   const feed = useSelector((state) => state.postFeed)
+  const feedLength = useSelector((state) => state.postFeed.length)
 
   return (
     <div>
@@ -15,14 +16,15 @@ export function PostFeed() {
             aria-label="Increment value"
             onClick={() => dispatch(increment())}
           >
-            Increment
+            More
           </button>
+          <span className='feedNum'>{feedLength}</span>
           <button
             className='upDownButtons'
             aria-label="Decrement value"
             onClick={() => dispatch(decrement())}
           >
-            Decrement
+            Less
           </button>
         </div>
         <div className='feed'>

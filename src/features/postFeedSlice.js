@@ -17,3 +17,11 @@ const postFeedSlice = createSlice({
 
 export const { increment, decrement } = postFeedSlice.actions
 export default postFeedSlice.reducer
+
+export const fetchPosts = () => async(dispatch) => {
+  try {
+
+  } catch (error) {
+    console.log('Error loading data')
+  }
+}

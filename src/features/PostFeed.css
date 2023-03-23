@@ -25,3 +25,9 @@
     width: 25rem;
     height: 15rem;
 }
+
+.feedNum {
+    font-size: 2rem;
+    padding: 0 1rem;
+    font-weight: bold;
+}
