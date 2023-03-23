@@ -9,3 +9,11 @@ div {
     background-color: white;
     margin: 1rem 0rem;
 }
+
+h1 {
+    font-weight: light;
+}
+
+h4 {
+    font-weight: lighter;
+}
