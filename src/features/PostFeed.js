@@ -31,6 +31,7 @@ export function PostFeed() {
             {feed.map((post, index) => (
                 <><div key={index} className="postBox"><h2>{post.title}</h2><h3>{post.content}</h3><p>{post.sub}</p></div></>
             ))}
+            {feedLength>5? <h4>No more reddit for you!</h4> : null}
         </div>
     </div>
   )
