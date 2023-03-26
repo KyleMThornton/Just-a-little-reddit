@@ -14,6 +14,19 @@ export function PostFeed() {
     dispatch(fetchRedditData());
   }, [dispatch]);
 
+  const feedData = posts.map((post) => (
+    <div key={post.id} className='postBox'>
+      <h2>{post.title}</h2>
+      {post.selftext ? <p>{post.selftext}</p> : null}
+      {post.is_video ? <video src={post.secure_media.reddit_video.fallback_url} controls></video> : null}
+      {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
+      {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
+      <h3>{post.subreddit_name_prefixed}</h3>
+    </div>
+  ))
+  
+  const feedDataToDisplay = feedData.slice(0, numOfPosts)
+
   return (
     <div>
         <div className='buttons'>
@@ -24,7 +37,6 @@ export function PostFeed() {
           >
             More
           </button>
-          {/* <input type='number' id='quantity' min='1' max='20' value='10'></input> */}
           <span>{numOfPosts}</span>
           <button
             className='upDownButtons'
@@ -35,16 +47,8 @@ export function PostFeed() {
           </button>
         </div>
         <div className='feed'>
-          {posts.map((post) => (
-            <div key={post.id} className='postBox'>
-              <h2>{post.title}</h2>
-              {post.selftext ? <p>{post.selftext}</p> : null}
-              {post.is_video ? <video src={post.secure_media.reddit_video.fallback_url} controls></video> : null}
-              {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
-              {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
-              <h3>{post.subreddit_name_prefixed}</h3>
-            </div>
-          ))}
+          {feedDataToDisplay}
+          {feedDataToDisplay.length > 5 ? <p>That's enough reddit for one day!</p> : null}
         </div>
     </div>
   )

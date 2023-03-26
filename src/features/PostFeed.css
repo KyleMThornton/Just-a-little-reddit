@@ -19,6 +19,12 @@
     box-shadow: 2px 2px;
 }
 
+span {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    font-size: 2rem;
+}
+
 .feed h2 {
     margin: 1rem;
 }
