@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchRedditData } from './postFeedSlice'
+import { fetchRedditData, increment, decrement } from './postFeedSlice'
 import './PostFeed.css'
 
 export function PostFeed() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.postFeed.posts);
+  const numOfPosts = useSelector((state) => state.postFeed.numOfPosts);
   // const status = useSelector((state) => state.postFeed.status);
   // const error = useSelector((state) => state.postFeed.error);
 
   useEffect(() => {
     dispatch(fetchRedditData());
-  }, [dispatch])
-
+  }, [dispatch]);
 
   return (
     <div>
@@ -20,15 +20,16 @@ export function PostFeed() {
           <button
             className='upDownButtons'
             aria-label="Increment value"
-            onClick={() => dispatch()}
+            onClick={numOfPosts <20 ? () => dispatch(increment()) : null}
           >
             More
           </button>
-          <input type='number' id='quantity' min='1' max='20'></input>
+          {/* <input type='number' id='quantity' min='1' max='20' value='10'></input> */}
+          <span>{numOfPosts}</span>
           <button
             className='upDownButtons'
             aria-label="Decrement value"
-            onClick={() => dispatch()}
+            onClick={numOfPosts > 0 ? () => dispatch(decrement()) : null}
           >
             Less
           </button>
@@ -39,7 +40,7 @@ export function PostFeed() {
               <h2>{post.title}</h2>
               {post.selftext ? <p>{post.selftext}</p> : null}
               {post.is_video ? <video src={post.secure_media.reddit_video.fallback_url} controls></video> : null}
-              {post.post_hint === "image" ? <img src={post.url_overridden_by_dest}></img> : null}
+              {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
               {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
               <h3>{post.subreddit_name_prefixed}</h3>
             </div>

@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios";
 
-// const initialState = [{ title: 'title',content: 'content', sub: "r/subreddit" }]
-
 const redditUrl = `https://www.reddit.com/r/popular.json`;
 
 export const fetchRedditData = createAsyncThunk(
@@ -18,9 +16,17 @@ const postFeedSlice = createSlice({
   initialState: {
     posts: [],
     state: 'idle',
-    error: null
+    error: null,
+    numOfPosts: 4
   },
-  reducers: {},
+  reducers: {
+    increment(state) {
+      state.numOfPosts++
+    },
+    decrement(state) {
+      state.numOfPosts--
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRedditData.pending, (state) => {
@@ -37,10 +43,5 @@ const postFeedSlice = createSlice({
   }
 })
 
-export default postFeedSlice.reducer
-
-// export async function fetchPosts() {
-//     const redditData = await getRedditData()
-//     console.log(redditData[3])
-//     return redditData
-// }
+export const { increment, decrement } = postFeedSlice.actions;
+export default postFeedSlice.reducer;
