@@ -23,10 +23,6 @@
     margin: 1rem;
 }
 
-.feed h3 {
-    width: 25rem;
-}
-
 .feed p {
     margin: 1rem;
     padding: 0.5rem;
@@ -40,4 +36,10 @@
     font-size: 2rem;
     padding: 0 1rem;
     font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .postBox {
+        width: 20rem;
+    }
 }
