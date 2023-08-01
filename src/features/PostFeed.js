@@ -21,7 +21,7 @@ export function PostFeed() {
       {post.is_video ? <video src={post.secure_media.reddit_video.fallback_url} controls></video> : null}
       {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
       {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
-      <h3><a href={post.url}target='_blank'>{post.subreddit_name_prefixed}</a></h3>
+      <h3><a href={post.url}target='_blank'rel="noreferrer">{post.subreddit_name_prefixed}</a></h3>
     </div>
   ))
   
@@ -48,7 +48,7 @@ export function PostFeed() {
         </div>
         <div className='feed'>
           {feedDataToDisplay}
-          {feedDataToDisplay.length > 5 ? <p>That's enough reddit for one day!</p> : null}
+          {feedDataToDisplay.length > 5 ? <h4>That's enough reddit for one day!</h4> : null}
         </div>
     </div>
   )
