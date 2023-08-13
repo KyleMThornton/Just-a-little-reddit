@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios";
 
-const redditUrl = `https://www.reddit.com/r/popular.json`;
+const redditUrl = `https://api.reddit.com/r/popular.json`;
 
 export const fetchRedditData = createAsyncThunk(
   "postFeed/fetchData",
