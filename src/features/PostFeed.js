@@ -14,6 +14,12 @@ export function PostFeed() {
     dispatch(fetchRedditData());
   }, [dispatch]);
 
+  const onExpandClick = (arrInd) => {
+    let items = [buttonStatus]
+    items[arrInd] =- !items[arrInd]
+    setButtonStatus(items)
+  }
+
   const feedData = posts.map((post) => (
     <div key={post.id} className='postBox'>
       <h2>{post.title}</h2>
@@ -22,6 +28,7 @@ export function PostFeed() {
       {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
       {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
       <h3><a href={post.url}target='_blank'rel="noreferrer">{post.subreddit_name_prefixed}</a></h3>
+      <button onClick={() => onExpandClick}>Expand</button>
     </div>
   ))
   
