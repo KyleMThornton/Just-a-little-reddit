@@ -4,4 +4,4 @@ This is a simple Reddit client that allows you to limit the amount of content yo
 
 Created using React, Redux, and the Reddit API.
 
-https://effulgent-phoenix-9b3e7e.netlify.app/
+https://just-a-little-reddit.netlify.app/
