@@ -19,6 +19,7 @@ export function PostFeed() {
       <h2>{post.title}</h2>
       {post.selftext ? <p>{post.selftext}</p> : null}
       {post.is_video ? <video src={post.secure_media.reddit_video.fallback_url} controls></video> : null}
+      {post.is_gallery? <img src={post.thumbnail} alt={post.title}></img> : null}
       {post.post_hint === "image" ? <img src={post.url_overridden_by_dest} alt={post.title}></img> : null}
       {post.post_hint === "link" ? <a href={post.url_overridden_by_dest}>Link to article</a> : null}
       <h3><a href={post.url}target='_blank'rel="noreferrer">{post.subreddit_name_prefixed}</a></h3>
