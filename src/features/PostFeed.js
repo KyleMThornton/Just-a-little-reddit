@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRedditData, increment, decrement } from './postFeedSlice'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 import './PostFeed.css'
 
 export function PostFeed() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.postFeed.posts);
   const numOfPosts = useSelector((state) => state.postFeed.numOfPosts);
+  const [parent, enableAnimations] = useAutoAnimate();
   // const status = useSelector((state) => state.postFeed.status);
   // const error = useSelector((state) => state.postFeed.error);
 
@@ -47,7 +49,7 @@ export function PostFeed() {
             Less
           </button>
         </div>
-        <div className='feed'>
+        <div className='feed' ref={parent}>
           {feedDataToDisplay}
           {feedDataToDisplay.length > 5 ? <h4>That's enough reddit for one day!</h4> : null}
         </div>
