@@ -1,4 +1,4 @@
-# Just a Little Reddit
+# just a little reddit
 
 A simple, lightweight Reddit client that allows you to set a limit to the number of posts you see so you don't scroll all day.
 
